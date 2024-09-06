@@ -1,0 +1,40 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type BusRoute {
+  id: Int!
+  routeNumber: String!
+  departure: String!
+  destination: String!
+  departureTime: DateTime!
+  arrivalTime: DateTime!
+  price: Float!
+  busCapacity: Float!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  busRoutes: [BusRoute!]!
+  busRoute(id: Int!): BusRoute
+}
+
+type Mutation {
+  createBusRoute(input: CreateBusRouteInput!): BusRoute!
+  updateBusRoute(id: Int!, input: CreateBusRouteInput!): BusRoute!
+  removeBusRoute(id: Int!): BusRoute!
+}
+
+input CreateBusRouteInput {
+  routeNumber: String!
+  departure: String!
+  destination: String!
+  departureTime: String!
+  arrivalTime: String!
+  price: Float!
+  busCapacity: Float!
+}

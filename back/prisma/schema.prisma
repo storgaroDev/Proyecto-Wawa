@@ -1,0 +1,20 @@
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model BusRoute {
+  id Int @id @default(autoincrement())
+  routeNumber String
+  departure String
+  destination String
+  departureTime DateTime
+  arrivalTime DateTime
+  price Float?
+  busCapacity   Int?
+}
